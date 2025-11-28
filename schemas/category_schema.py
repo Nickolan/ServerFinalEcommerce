@@ -4,12 +4,13 @@ from pydantic import Field
 
 from schemas.base_schema import BaseSchema
 
-if TYPE_CHECKING:
-    from schemas.product_schema import ProductSchema
+#if TYPE_CHECKING:
+ #   from schemas.product_schema import ProductSchema, ProductBaseSchema
 
 
-class CategorySchema(BaseSchema):
-    """Schema for Category entity with validations."""
-
+class CategoryBaseSchema(BaseSchema): # Nuevo esquema ligero
     name: str = Field(..., min_length=1, max_length=100, description="Category name (required, unique)")
-    products: Optional[List['ProductSchema']] = []
+
+class CategorySchema(CategoryBaseSchema): # El esquema principal hereda del base
+    # La relación ahora usa el esquema base de Producto, rompiendo el ciclo.
+    products: Optional[List['ProductBaseSchema']] = []
