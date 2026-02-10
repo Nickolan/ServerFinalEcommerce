@@ -38,7 +38,7 @@ MAX_OVERFLOW = int(os.getenv('DB_MAX_OVERFLOW', '100'))  # Additional connection
 POOL_TIMEOUT = int(os.getenv('DB_POOL_TIMEOUT', '10'))  # Wait time for connection (reduced for production)
 POOL_RECYCLE = int(os.getenv('DB_POOL_RECYCLE', '3600'))  # Recycle connections after 1 hour
 
-DATABASE_URI = f'postgresql://ecommerce_user:6yRfLlYqpQpmMY6pCbLlh2ovGvcueIhe@dpg-d4nctmje5dus73921t2g-a.oregon-postgres.render.com/ecommerce_6ovs'
+DATABASE_URI = f'postgresql://db_mercado_fake_user:Q6k0vEQqcBotx4vpCeLrINfZfmo9Kw3b@dpg-d65h6mnpm1nc739s02e0-a.oregon-postgres.render.com/db_mercado_fake'
 
 # Create engine with optimized connection pooling for high concurrency
 engine = create_engine(
